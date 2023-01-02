@@ -1,0 +1,21 @@
+syntax = "proto3"; /* default is proto2 */
+option java_package = "proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+message identificationRequest {
+  string id = 1; /* Id must be bigger than 0 and be the same on client and server */
+}
+message Note {
+  int32 id = 1;
+  string textInfo = 2;
+  string dateAndTime = 3;
+}
+
+message identificationResponse {
+  repeated Note notes = 1;
+}
+service NotifyService {
+  rpc getALlNotes (identificationRequest) returns (identificationResponse) {}
+  rpc addNewNote(Note) returns (google.protobuf.BoolValue){}
+  rpc deleteNote(google.protobuf.Int32Value) returns (google.protobuf.BoolValue){}
+}
