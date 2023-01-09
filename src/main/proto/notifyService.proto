@@ -18,4 +18,5 @@ service NotifyService {
   rpc getALlNotes (identificationRequest) returns (identificationResponse) {}
   rpc addNewNote(Note) returns (google.protobuf.BoolValue){}
   rpc deleteNote(google.protobuf.Int32Value) returns (google.protobuf.BoolValue){}
+  rpc getTopNote(google.protobuf.Empty) returns (Note){}
 }

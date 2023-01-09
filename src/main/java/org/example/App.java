@@ -3,6 +3,8 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import notify.server.server;
 
+import java.io.IOException;
+
 public class App
 {
     public static void main( String[] args )  throws Exception
